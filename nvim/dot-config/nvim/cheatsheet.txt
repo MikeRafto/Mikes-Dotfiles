@@ -1,0 +1,12 @@
+## vimtex @latex @tex
+Enable compiling | <leader>ll
+Show/hide errors | <leader>le
+Table of contents | <leader>lt
+Change surrounding environment | cse
+Toggle environment | tse
+Toggle * environment | tss
+Close current environment (insert mode) | ]]
+
+## IncRename @rename @lsp
+Rename (LSP) | <leader>s
+Rename (LSP) | <F2>

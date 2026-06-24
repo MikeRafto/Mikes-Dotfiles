@@ -1,0 +1,92 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc. Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Lines configured by zsh-newuser-install
+
+# The code added to ~/.zshrc is marked by the lines
+# You should not edit anything between these lines if you intend to
+# run zsh-newuser-install again.  You may, however, edit any other part
+# of the file.
+
+# The function will not be run in future, but you can run
+# it yourself as follows:
+#   autoload -Uz zsh-newuser-install
+#   zsh-newuser-install -f
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd beep nomatch
+unsetopt extendedglob notify
+bindkey -e #note from mike: I can change this to use VIM key bindings? 
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/mr/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+#####################
+# Lines added by me #
+#####################
+# Set Options
+setopt appendhistory
+setopt sharehistory # share history among zsh sessions
+
+# Load Theme
+source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+
+# Load Plugins
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fpath=(~/.config/zsh/zsh-completions/src $fpath)
+
+# Directories for fzf prunning
+export FCD_PRUNE="Documents/School/7th Semester/Human Computer Interaction/HCI-Project"
+
+# Set up aliases
+source <(fzf --zsh)
+alias fcd='cd ~ && cd "$(fd -H --type d --exclude "$FCD_PRUNE" . | fzf)"'
+alias onv='nvim $(fzf -m --preview="bat {} --color=always")'
+alias update='sudo dnf update -y && flatpak update -y'
+alias restart-plasma='systemctl --user restart plasma-plasmashell.service'
+alias mountpl='sshfs parlab:/home/parallel/parlab31 ~/Documents/School/9th-Semester/Parallel\ Processing\ Systems/parlab31'
+alias umountpl='umount ~/Documents/School/9th-Semester/Parallel\ Processing\ Systems/parlab31'
+alias tai='tmuxai'
+alias gtsync='rclone sync /home/mr/Documents/School/Thesis/src gdrive:/Colab-Data/Thesis/src --exclude ".venv/**" --verbose'
+# alias tsync='rsync -rv /home/mr/Documents/School/Thesis/src hemingway:~/Thesis/ && rsync -v /home/mr/Documents/School/Thesis/data/MultiConAD/* hemingway:~/Thesis/data/MultiConAD/ && rsync -rv /home/mr/Documents/School/Thesis/data/MultiConAD/preprocessing/* hemingway:~/Thesis/data/MultiConAD/preprocessing'
+alias tsync='rsync -av --max-size=5m --exclude=".git/" --exclude="__pycache__/" --exclude=".venv/" --exclude="env/" --exclude="*.pt" --exclude="*.pth" --exclude="*.wav" --exclude="*.mp3" --exclude="*.cha" --exclude="*.srt" --exclude="*.json" --exclude="*.tar" /home/mr/Documents/School/Thesis/ hemingway:~/Thesis/'
+alias fix-spotify='rm -rf /home/mr/.var/app/com.spotify.Client'
+alias fix-chrome='rm -f ~/.config/google-chrome/SingletonLock ~/.config/google-chrome/SingletonCookie'
+alias lastgraph='rsync -av --progress hemingway:~/Thesis/results/$(ssh hemingway "ls -t ~/Thesis/results/ | head -1") /home/mr/Documents/School/Thesis/results/ && xdg-open /home/mr/Documents/School/Thesis/results/$(ssh hemingway "ls -t ~/Thesis/results/ | head -1")/run_0/training.png'
+
+function mann() {man $1 | bat -l man --style=-numbers}
+alias fastfetch='fastfetch -c examples/2.jsonc'
+
+# when sshing, temporarily change the teminal type (for compatibility reasons)
+alias ssh='TERM=screen-256color ssh' # this does not work with ssh-split...
+
+# Set up Path
+export PATH="$PATH:/home/mr/.local/bin"
+
+# Set up Environment Variables
+export EDITOR='nvim'
+
+# Load some zsh default utilities
+autoload -U zmv 
+
+############################
+# End of lines added by me #
+############################
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mr/.local/bin:$PATH"

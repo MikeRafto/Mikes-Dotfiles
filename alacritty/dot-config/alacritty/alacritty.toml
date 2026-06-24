@@ -1,0 +1,45 @@
+[env]
+# xterm-256color / alacritty (this has some compatibility issues)
+# all the processes usually see the tmux.conf value, not this
+TERM = "xterm-256color" 
+
+[general]
+live_config_reload = true
+
+# good themes: nord, nightfox, carbonfox, everforest_dark, rose_pine
+import = [
+    "~/.local/share/alacritty/themes/themes/everforest_dark.toml"
+]
+
+[colors.primary]
+# this will override the theme background color
+# background = '#232627'
+
+[window]
+decorations = "None" # "None", "Full"
+dimensions = { columns = 100, lines = 26 }
+padding = { x = 5, y = 5 }
+dynamic_padding = true
+opacity = 0.85 # make sure to keep the keybinding updated. these shortcuts should eventually be replaced by incr/decr scripts
+blur = false
+
+[font]
+normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
+bold = { family = "JetBrainsMonoNerdFont", style = "Bold" }
+italic = { family = "JetBrainsMonoNerdFont", style = "Italic" }
+bold_italic = { family = "JetBrainsMonoNerdFont", style = "Bold Italic" }
+
+[keyboard]
+
+[[keyboard.bindings]]
+key = "Plus"	
+mods = "Control|Shift"
+command = { program = "alacritty", args = ["msg", "config", "window.opacity=1.0"] }
+
+[[keyboard.bindings]]
+key = "_"
+mods = "Control|Shift"
+command = { program = "alacritty", args = ["msg", "config", "window.opacity=0.85"] }
+
+[mouse]
+hide_when_typing = true
