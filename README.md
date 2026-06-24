@@ -5,7 +5,8 @@ So, I decided to organize my system's configuration files into a central `~/dotf
 I made the repo public, so you may have a look if you want!
 
 ## Installation
-> [!WARNING] I'd suggest creating a quick backup of your files before you start playing!
+> [!WARNING]
+> I'd suggest creating a quick backup of your files before you start playing!
 
 ### Apply dotfiles
 First, clone this repo to your home directory:
