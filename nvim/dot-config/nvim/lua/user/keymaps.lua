@@ -84,16 +84,9 @@ keymap("n", "<leader>bd", ":bd<CR>", opts)
 vim.keymap.set("n", "<leader>s", ":IncRename ")
 vim.keymap.set("n", "<F2>", ":IncRename ")
 
+-- Oil.nvim
+vim.keymap.set("n", "<leader>o", ":Oil . --float<CR>")
+
 -- Cheatsheet
 keymap("n", "<leader>?", ":Cheatsheet<CR>", opts)
-
---Copilot Autocomplete
-vim.keymap.set('i', '<C-c>', 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false
-})
-vim.g.copilot_no_tab_map = true
-
---Toggle Copilot Chat
-keymap("n", "<leader>c", ":CopilotChatToggle<CR>", opts)
 

@@ -1,0 +1,95 @@
+# Introduction to the Keymaps of 99.lua
+
+Welcome to **99.lua**, a Neovim plugin designed to bring powerful, interactive, AI-assisted development workflows right into your editor. By configuring your preferred AI providers (like Gemini or OpenCode) and utilizing standard Neovim keymaps, `99.lua` automates visual edits, search queries, work tracking, and model switching.
+
+This tutorial guides you through the keymaps configured in `99.lua`, explaining their behavior, the modes in which they operate, and how to use them effectively in your daily coding routine.
+
+---
+
+## The Prefix Key
+
+By default, all `99.lua` keymaps are prefixed with `<leader>9`. 
+Since your `mapleader` is set to `<Space>` (spacebar) in `keymaps.lua`, all commands begin with:
+`Space` followed by `9`
+
+---
+
+## 1. Core AI Interaction Keymaps
+
+These are the primary keymaps you will use to communicate with the AI model for refactoring, writing code, and seeking assistance.
+
+### Visual AI Edit: `<leader>9v` (Visual Mode Only)
+- **Function:** `_99.visual()`
+- **How it works:** Highlight a block of code in Visual mode (`v`) and press `<leader>9v`. This sends the visually selected code block directly to the AI as context for your instructions.
+- **Why it's in Visual Mode:** To avoid accidentally sending an old or stale visual selection, this keymap is strictly mapped to visual selection mode.
+
+### Cancel Active Request: `<leader>9x` (Normal Mode)
+- **Function:** `_99.stop_all_requests()`
+- **How it works:** Press `<leader>9x` in Normal mode to immediately abort any running AI requests. If you notice a prompt going off-course or making unexpected edits, use this to halt it instantly.
+
+### Contextual Search: `<leader>9s` (Normal Mode)
+- **Function:** `_99.search()`
+- **How it works:** Starts a search-based prompt session, letting you search through your codebase context before sending queries to the AI.
+
+### General Discussion/Chat: `<leader>9V` (Normal Mode)
+- **Function:** `_99.vibe()`
+- **How it works:** Launches a general-purpose chat or "vibe" session with the AI, allowing you to ask questions or discuss concepts without requiring specific code-editing commands.
+
+---
+
+## 2. Configuration & Provider Settings (Telescope Pickers)
+
+When you want to change your AI model or switch to a different provider on the fly, `99.lua` provides seamless integration with Telescope.
+
+### Select AI Model: `<leader>9m` (Normal Mode)
+- **Function:** `require("99.extensions.telescope").select_model()`
+- **How it works:** Opens a Telescope fuzzy finder listing all available AI models (such as Gemini Flash, Gemini Pro, Claude, etc.) so you can dynamically switch active models.
+
+### Select Provider: `<leader>9p` (Normal Mode)
+- **Function:** `require("99.extensions.telescope").select_provider()`
+- **How it works:** Opens a Telescope dropdown to switch between active backend providers (e.g., Gemini CLI, OpenCode, Claude Code).
+
+---
+
+## 3. History & Task Management
+
+Keep track of your previous prompts and organize larger development tasks.
+
+### Open Previous Request: `<leader>9h` (Normal Mode)
+- **Function:** `_99.open()`
+- **How it works:** Press `<leader>9h` to open your previous request history. This is helpful for reviewing what was asked or resuming a past prompt.
+
+### Set Work Item: `<leader>9w` (Normal Mode)
+- **Function:** `_99.Extensions.Worker.set_work()`
+- **How it works:** Sets a target work item or goal for the `99.lua` worker extension to track.
+
+### Search Remaining Work: `<leader>9ws` (Normal Mode)
+- **Function:** `_99.Extensions.Worker.search()`
+- **How it works:** Searches and displays remaining work items and tasks that are left to complete.
+
+---
+
+## 4. Interactive Tutorial
+
+### Launch Built-in Tutorial: `<leader>9t` (Normal Mode)
+- **Function:** `_99.tutorial()`
+- **How it works:** Launches an interactive, hands-on tutorial inside Neovim to help you master `99.lua`'s capabilities step-by-step.
+
+---
+
+## Keymaps Reference Cheat Sheet
+
+| Keymap | Mode | Action / Function | Description |
+| :--- | :---: | :--- | :--- |
+| `<leader>9v` | **Visual** | `_99.visual()` | Send visual selection to AI for context-driven edits |
+| `<leader>9x` | **Normal** | `_99.stop_all_requests()` | Stop/Cancel all running AI requests |
+| `<leader>9s` | **Normal** | `_99.search()` | Perform an AI-assisted codebase search |
+| `<leader>9V` | **Normal** | `_99.vibe()` | Start an interactive chat / vibe session |
+| `<leader>9m` | **Normal** | `select_model()` (Telescope) | Fuzzy find and switch active AI models |
+| `<leader>9p` | **Normal** | `select_provider()` (Telescope) | Fuzzy find and switch active AI providers |
+| `<leader>9h` | **Normal** | `_99.open()` | Open and view previous request history |
+| `<leader>9w` | **Normal** | `set_work()` | Set a target task/work item for the worker |
+| `<leader>9ws`| **Normal** | `search()` (Worker) | Search and list remaining work items |
+| `<leader>9t` | **Normal** | `_99.tutorial()` | Start the interactive, hands-on 99.lua tutorial |
+
+Enjoy your accelerated development with `99.lua`!

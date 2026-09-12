@@ -37,8 +37,7 @@ call plug#begin()
 	Plug 'williamboman/mason-lspconfig.nvim' "connects mason installs to lspconfig
 
 	" vIbE cODiNg
-	Plug 'github/copilot.vim'
-	Plug 'CopilotC-Nvim/CopilotChat.nvim'
+	Plug 'ThePrimeagen/99' "The AI client that Neovim deserves, built by those that still enjoy to code.
 
 	" autocompletion
 	Plug 'hrsh7th/nvim-cmp'
@@ -64,6 +63,7 @@ call plug#begin()
 	Plug 'sudormrfbin/cheatsheet.nvim' "cheatsheet
 	"Plug 'vimpostor/vim-tpipeline' "embed vim statusline in the tmux statusline
 	Plug 'Wansmer/langmapper.nvim' "for greek keymaps
+	Plug 'stevearc/oil.nvim' "buffer-focused file explorer
 
 	" language-specific
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
@@ -83,6 +83,7 @@ call plug#end()
 " ====== CONFIGURE PLUGINS ======
 " disable copilot by default
 let g:copilot_enabled = 0
+let g:vimtex_quickfix_open_on_warning = 0
 
 " ====== STYLING ======
 set termguicolors
@@ -106,11 +107,12 @@ require "user.lsp"
 require "user.cmp"
 require "user.keymaps"
 require "user.telescope"
-require "user.copilot"
 require "user.cheatsheet"
 require "user.treesitter"
 require "user.langmapper"
 require "user.alacritty_colorscheme"
 require "user.lualine"
+require "user.99"
 require("inc_rename").setup()
+require("oil").setup({ float = { border = "rounded", max_width = 60, max_height = 15 } })
 EOF
