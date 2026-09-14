@@ -52,7 +52,7 @@ export FCD_PRUNE="Documents/School/7th Semester/Human Computer Interaction/HCI-P
 # Set up aliases
 source <(fzf --zsh)
 alias fcd='cd ~ && cd "$(fd -H --type d --exclude "$FCD_PRUNE" . | fzf)"'
-alias onv='nvim $(fzf -m --preview="bat {} --color=always")'
+alias onv='fcd && nvim'
 alias update='sudo dnf update -y && flatpak update -y'
 alias restart-plasma='systemctl --user restart plasma-plasmashell.service'
 alias mountpl='sshfs parlab:/home/parallel/parlab31 ~/Documents/School/9th-Semester/Parallel\ Processing\ Systems/parlab31'
