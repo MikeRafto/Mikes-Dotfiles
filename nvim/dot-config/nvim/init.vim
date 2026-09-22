@@ -64,6 +64,7 @@ call plug#begin()
 	"Plug 'vimpostor/vim-tpipeline' "embed vim statusline in the tmux statusline
 	Plug 'Wansmer/langmapper.nvim' "for greek keymaps
 	Plug 'stevearc/oil.nvim' "buffer-focused file explorer
+	Plug 'https://github.com/MeanderingProgrammer/render-markdown.nvim' "render markdown files
 
 	" language-specific
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }

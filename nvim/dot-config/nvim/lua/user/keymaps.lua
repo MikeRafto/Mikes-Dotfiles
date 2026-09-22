@@ -89,3 +89,4 @@ vim.keymap.set("n", "<leader>o", ":Oil . --float<CR>")
 -- Cheatsheet
 keymap("n", "<leader>?", ":Cheatsheet<CR>", opts)
 
+keymap("n", "<leader>md", ":RenderMarkdown toggle<CR>", opts)

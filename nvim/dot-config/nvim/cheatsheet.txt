@@ -11,7 +11,7 @@ Close current environment (insert mode) | ]]
 Rename (LSP) | <leader>s
 Rename (LSP) | <F2>
 
-## 99 @tmp/99-5901-prompt @lua/user/99.lua
+## 99 @99 @agent
 Send visual selection as prompt | <leader>9v
 Cancel all active requests | <leader>9x
 Search the entire codebase | <leader>9s
@@ -21,7 +21,7 @@ Select model provider via Telescope dropdown picker | <leader>9p
 Open history of previous AI requests and buffers | <leader>9h
 Launch interactive tutorial with question about the codebase | <leader>9t
 
-## oil.nvim @oil @init.vim @lua/user/keymaps.lua
+## oil.nvim @oil 
 Open oil.nvim (floating) | <leader>o
 Open entry | <CR>
 Go up to parent directory | -
@@ -29,3 +29,6 @@ Move to split | <C-s>
 Move to new tab | <C-t>
 Toggle hidden files/dirs | g.
 Show help / map actions | g?
+
+## render-markdown.nvim @md @render-markdown
+Toggle RenderMarkdown | <leader>md
