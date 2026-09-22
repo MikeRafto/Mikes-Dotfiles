@@ -27,10 +27,6 @@ keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
---Quick Disable/Enable Copilot
-keymap("n", "<leader>cd", ":Copilot disable<CR>", opts)
-keymap("n", "<leader>ce", ":Copilot enable<CR>", opts)
-
 --NRW file explorer
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
@@ -49,11 +45,14 @@ vim.keymap.set("n", "<leader>cn", ":cn<CR>")
 vim.keymap.set("n", "<leader>cp", ":cp<CR>")
 vim.keymap.set("n", "<leader>cc", ":cclose<CR>")
 
---Copy and Pasting to clipboard
+-- Copy and Pasting to clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set("n", "<leader>ya", [[:%y +<CR>]])
+
+-- Select all text
+keymap("n", "<leader>a", "ggVG", opts)
 
 -- Center Screen to Cursor
 keymap("n", "<C-u>", "<C-u>zz", opts)

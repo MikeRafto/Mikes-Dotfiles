@@ -64,6 +64,7 @@ alias tsync='rsync -av --max-size=5m --exclude=".git/" --exclude="__pycache__/" 
 alias fix-spotify='rm -rf /home/mr/.var/app/com.spotify.Client'
 alias fix-chrome='rm -f ~/.config/google-chrome/SingletonLock ~/.config/google-chrome/SingletonCookie'
 alias lastgraph='rsync -av --progress hemingway:~/Thesis/results/$(ssh hemingway "ls -t ~/Thesis/results/ | head -1") /home/mr/Documents/School/Thesis/results/ && xdg-open /home/mr/Documents/School/Thesis/results/$(ssh hemingway "ls -t ~/Thesis/results/ | head -1")/run_0/training.png'
+alias oc='opencode'
 
 function mann() {man $1 | bat -l man --style=-numbers}
 alias fastfetch='fastfetch -c examples/2.jsonc'

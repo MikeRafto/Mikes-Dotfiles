@@ -11,7 +11,7 @@ vim.lsp.config('cssls', {})
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-vim.lsp.config('html', { capabilities = capabilities })
+vim.lsp.config('html', { capabilities = capabilities, filetypes = { "html", "htm", "xhtml" } })
 vim.lsp.config('lua_ls', {})
 -- vim.lsp.config('millet', {})
 vim.lsp.config('sqlls', {})

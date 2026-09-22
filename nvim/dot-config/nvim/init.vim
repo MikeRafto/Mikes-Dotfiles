@@ -99,6 +99,16 @@ highlight NormalFloat guibg=none ctermbg=none
 " some custom colors
 " highlight LineNr guifg=#535576
 set cursorline
+autocmd ColorScheme * highlight @comment.todo guifg=#ff9e64 guibg=none
+autocmd ColorScheme * highlight @comment.note guifg=#7aa2f7 guibg=none
+autocmd ColorScheme * highlight @comment.warning guifg=#e0af68 guibg=none
+autocmd ColorScheme * highlight @comment.error guifg=#f7768e guibg=none
+autocmd ColorScheme * highlight Todo guifg=#ff9e64 guibg=none
+autocmd ColorScheme * highlight SpecialComment guifg=#7aa2f7 guibg=none
+" TODO
+" ERROR
+" NOTE
+" WARNING
 
 " ====== LUA CONFIGS ======
 " load lua configs
