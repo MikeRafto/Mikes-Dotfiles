@@ -12,7 +12,7 @@ I made the repo public, so you may have a look if you want!
 First, clone this repo to your home directory:
 
 ```bash
-git clone https://github.com/MikeRafto/dotfiles
+git clone https://github.com/MikeRafto/Mikes-Dotfiles
 ```
 
 You can enforce the repo configurations to your system using GNU stow:
