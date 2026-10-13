@@ -45,6 +45,7 @@ git clone https://github.com/romkatv/powerlevel10k ~/.local/share/zsh/powerlevel
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.local/share/zsh/zsh-syntax-highlighting
 git clone https://github.com/marlonrichert/zsh-autocomplete ~/.local/share/zsh/zsh-autocomplete
+git clone https://github.com/zsh-users/zsh-completions ~/.local/share/zsh/zsh-completions
 ```
 
 
