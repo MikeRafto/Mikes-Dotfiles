@@ -24,6 +24,24 @@ unsetopt extendedglob notify
 bindkey -e #note from mike: I can change this to use VIM key bindings? 
 # End of lines configured by zsh-newuser-install
 
+
+#####################
+# Lines added by me #
+#####################
+# Load Theme
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/powerlevel10k/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.local/share/zsh/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# Load Plugins
+source ~/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/share/zsh/zsh-completions/zsh-completions.plugin.zsh
+############################
+# End of lines added by me #
+############################
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/mr/.zshrc'
 
@@ -37,14 +55,6 @@ compinit
 # Set Options
 setopt appendhistory
 setopt sharehistory # share history among zsh sessions
-
-# Load Theme
-source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
-
-# Load Plugins
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fpath=(~/.config/zsh/zsh-completions/src $fpath)
 
 # Directories for fzf prunning
 export FCD_PRUNE="Documents/School/7th Semester/Human Computer Interaction/HCI-Project"
@@ -84,10 +94,6 @@ autoload -U zmv
 ############################
 # End of lines added by me #
 ############################
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 # Added by Antigravity CLI installer
 export PATH="/home/mr/.local/bin:$PATH"
