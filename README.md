@@ -32,13 +32,25 @@ stow --dotfiles -R nvim
 
 Although we have applied the nvim-tmux-alacritty configurations, we still need to download their plugins and themes. In order to keep the package files outside this repo, I have configured these programs to store their packages at:
 
-- `~/.local/share/nvim/*/` (which was the default anyway)
+- `~/.local/share/nvim/` (which was the default anyway)
 - `~/.local/share/tmux/plugins/`
 - `~/.local/share/alacritty/themes/`
+- `~/.local/share/zsh`
+
+#### zsh
+You have to manually install the zsh plugins and p10k theme:
+```bash
+mkdir -p ~/.local/share/zsh
+git clone https://github.com/romkatv/powerlevel10k ~/.local/share/zsh/powerlevel10k
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.local/share/zsh/zsh-syntax-highlighting
+git clone https://github.com/marlonrichert/zsh-autocomplete ~/.local/share/zsh/zsh-autocomplete
+```
+
 
 #### neovim
 
-Just open nvim and run `:PlugInstall`
+Just open nvim and run `:PlugInstall`. Make sure you have nvim and [vim-plug](https://github.com/junegunn/vim-plug) installed.
 
 #### tmux
 
